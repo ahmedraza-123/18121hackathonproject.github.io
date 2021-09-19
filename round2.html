@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Round 2</title>
+ <script>
+
+let popped = 0;
+var points=0;
+var health=5;
+document.addEventListener('mouseover', function(e){
+    
+
+    if (e.target.className === "balloon_darkcyan") {
+        e.target.style.backgroundColor = "#ededed";
+        e.target.textContent = "POP!";
+        popped++;
+        points++;
+        console.log(points)
+        document.getElementById("points").innerHTML = points;
+        removeEvent(e);
+        checkAllPopped();
+    }
+    else {
+        if (e.target.className === "balloon") {
+            health--;
+            document.getElementById("health").innerHTML = health;
+            console.log(health)
+ } }
+ if(health===0){
+
+    // points=0;health=10;
+alert("Oh No! You Lose The Game:)")
+     window.location.href="round2.html"
+     
+ }
+});
+
+
+
+ 
+
+
+
+function removeEvent(e){
+    e.target.removeEventListener('mouseover', function(){     
+    })
+};
+function checkAllPopped(){
+    if (popped === 10){
+        alert("You Win The Game!");
+        let gallery = document.querySelector('.balloon-gallery');
+        let message = document.querySelector('.balloon');
+        gallery.innerHTML = '';
+        message.style.display = 'block';
+        window.location.href="round2completemsg.html"
+     
+    }
+};
+
+
+ </script>  
+</head>
+
+
+
+<body>
+
+
+
+    
+
+
+
+
+
+
+<br>
+<br><br>
+
+
+<h1 style="text-align: center;">User life:<span id="health">5</span></h1>
+<h1 style="text-align: center;">User Score:<span id="points"></span></h1>
+<div id="balloons"><span class="blue"></span></div>
+<h2 style="text-align: center;">In Level 2 You Have to Pick only Dark Cyan colors balloon</h3>
+<br><br>
+<div class="balloon-gallery">
+<div class="balloon"  style="background-color: blue; width: 70px; height: 70px; border-radius: 50px; margin-left: 40px;"></div>
+<div class="balloon_darkcyan"  style="background-color: darkcyan; width: 70px; height: 70px; border-radius: 50px; margin-left: 160px; margin-top: -70px;"></div>
+<div class="balloon"  style="background-color: red; width: 70px; height: 70px; border-radius: 50px; margin-left: 280px; margin-top: -70px;"></div>
+<div class="balloon"  style="background-color: aqua; width: 70px; height: 70px; border-radius: 50px; margin-left: 400px; margin-top: -70px;"></div>
+<div class="balloon"  style="background-color: purple; width: 70px; height: 70px; border-radius: 50px; margin-left: 520px; margin-top: -70px;"></div>
+<div class="balloon"  style="background-color: orange; width: 70px; height: 70px; border-radius: 50px; margin-left: 640px; margin-top: -70px;"></div>
+<div class="balloon"  style="background-color: orangered; width: 70px; height: 70px; border-radius: 50px; margin-left: 760px; margin-top: -70px;"></div>
+<div class="balloon"  style="background-color: orchid; width: 70px; height: 70px; border-radius: 50px; margin-left: 880px; margin-top: -70px;"></div>
+<div class="balloon_darkcyan"  style="background-color: darkcyan; width: 70px; height: 70px; border-radius: 50px; margin-left: 1000px; margin-top: -70px;"></div>
+<div class="balloon"  style="background-color: firebrick; width: 70px; height: 70px; border-radius: 50px; margin-left: 1120px; margin-top: -70px;"></div>
+
+<div class="balloon"  style="background-color: cornflowerblue; width: 70px; height: 70px; border-radius: 50px; margin-left: 1240px; margin-top: -70px;"></div>
+
+
+
+
+
+
+
+
+</div>
+<br><br><br><br><br><br>
+
+
+<div class="balloon-gallery">
+    <div class="balloon"  style="background-color: blue; width: 70px; height: 70px; border-radius: 50px; margin-left: 40px; margin-top:-70px ;"></div>
+    <div class="balloon" style="background-color: black; width: 70px; height: 70px; border-radius: 50px; margin-left: 160px; margin-top: -70px;"></div>
+    <div class="balloon"  style="background-color: red; width: 70px; height: 70px; border-radius: 50px; margin-left: 280px; margin-top: -70px;"></div>
+    <div class="balloon_darkcyan"  style="background-color: darkcyan; width: 70px; height: 70px; border-radius: 50px; margin-left: 400px; margin-top: -70px;"></div>
+    <div class="balloon"  style="background-color: purple; width: 70px; height: 70px; border-radius: 50px; margin-left: 520px; margin-top: -70px;"></div>
+    <div class="balloon"  style="background-color: orange; width: 70px; height: 70px; border-radius: 50px; margin-left: 640px; margin-top: -70px;"></div>
+    <div class="balloon"  style="background-color: orangered; width: 70px; height: 70px; border-radius: 50px; margin-left: 760px; margin-top: -70px;"></div>
+    <div class="balloon"  style="background-color: orchid; width: 70px; height: 70px; border-radius: 50px; margin-left: 880px; margin-top: -70px;"></div>
+    <div class="balloon_darkcyan"  style="background-color: darkcyan; width: 70px; height: 70px; border-radius: 50px; margin-left: 1000px; margin-top: -70px;"></div>
+    <div class="balloon"  style="background-color: firebrick; width: 70px; height: 70px; border-radius: 50px; margin-left: 1120px; margin-top: -70px;"></div>
+    
+    <div class="balloon"  style="background-color: cornflowerblue; width: 70px; height: 70px; border-radius: 50px; margin-left: 1240px; margin-top: -70px;"></div>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+<br><br><br><br><br><br>
+
+<div class="balloon-gallery">
+    <div class="balloon"  style="background-color: blue; width: 70px; height: 70px; border-radius: 50px; margin-left: 40px; margin-top:-70px ;"></div>
+    <div class="balloon"  style="background-color: firebrick; width: 70px; height: 70px; border-radius: 50px; margin-left: 160px; margin-top: -70px;"></div>
+    <div class="balloon"  style="background-color: red; width: 70px; height: 70px; border-radius: 50px; margin-left: 280px; margin-top: -70px;"></div>
+    <div class="balloon_darkcyan"  style="background-color: darkcyan; width: 70px; height: 70px; border-radius: 50px; margin-left: 400px; margin-top: -70px;"></div>
+    <div class="balloon"  style="background-color: purple; width: 70px; height: 70px; border-radius: 50px; margin-left: 520px; margin-top: -70px;"></div>
+    <div class="balloon"  style="background-color: orange; width: 70px; height: 70px; border-radius: 50px; margin-left: 640px; margin-top: -70px;"></div>
+    <div class="balloon"  style="background-color: orangered; width: 70px; height: 70px; border-radius: 50px; margin-left: 760px; margin-top: -70px;"></div>
+    <div class="balloon"  style="background-color: orchid; width: 70px; height: 70px; border-radius: 50px; margin-left: 880px; margin-top: -70px;"></div>
+    <div class="balloon"  style="background-color: black; width: 70px; height: 70px; border-radius: 50px; margin-left: 1000px; margin-top: -70px;"></div>
+    <div class="balloon_darkcyan"  style="background-color: darkcyan; width: 70px; height: 70px; border-radius: 50px; margin-left: 1120px; margin-top: -70px;"></div>
+    
+    <div class="balloon" style="background-color: cornflowerblue; width: 70px; height: 70px; border-radius: 50px; margin-left: 1240px; margin-top: -70px;"></div>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+<br><br><br><br><br><br>
+<div class="balloon-gallery">
+    <div class="balloon"  style="background-color: blue; width: 70px; height: 70px; border-radius: 50px; margin-left: 40px; margin-top:-70px ;"></div>
+    <div class="balloon" style="background-color: purple; width: 70px; height: 70px; border-radius: 50px; margin-left: 160px; margin-top: -70px;"></div>
+    <div class="balloon" style="background-color: red; width: 70px; height: 70px; border-radius: 50px; margin-left: 280px; margin-top: -70px;"></div>
+    <div class="balloon"  style="background-color: aqua; width: 70px; height: 70px; border-radius: 50px; margin-left: 400px; margin-top: -70px;"></div>
+    <div class="balloon_darkcyan" style="background-color: darkcyan; width: 70px; height: 70px; border-radius: 50px; margin-left: 520px; margin-top: -70px;"></div>
+    <div class="balloon" style="background-color: orange; width: 70px; height: 70px; border-radius: 50px; margin-left: 640px; margin-top: -70px;"></div>
+    <div class="balloon" style="background-color: orangered; width: 70px; height: 70px; border-radius: 50px; margin-left: 760px; margin-top: -70px;"></div>
+    <div class="balloon" style="background-color: orchid; width: 70px; height: 70px; border-radius: 50px; margin-left: 880px; margin-top: -70px;"></div>
+    <div class="balloon" style="background-color: black; width: 70px; height: 70px; border-radius: 50px; margin-left: 1000px; margin-top: -70px;"></div>
+    <div class="balloon_darkcyan" style="background-color: darkcyan; width: 70px; height: 70px; border-radius: 50px; margin-left: 1120px; margin-top: -70px;"></div>
+    
+    <div class="balloon"  style="background-color: cornflowerblue; width: 70px; height: 70px; border-radius: 50px; margin-left: 1240px; margin-top: -70px;"></div>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+    
+<br><br><br><br><br><br>
+<div class="balloon-gallery" >
+    <div class="balloon"  style="background-color: blue; width: 70px; height: 70px; border-radius: 50px; margin-left: 40px; margin-top:-70px ;"></div>
+    <div class="balloon" style="background-color: firebrick; width: 70px; height: 70px; border-radius: 50px; margin-left: 160px; margin-top: -70px;"></div>
+    <div class="balloon" style="background-color: red; width: 70px; height: 70px; border-radius: 50px; margin-left: 280px; margin-top: -70px;"></div>
+    <div class="balloon" style="background-color: aqua; width: 70px; height: 70px; border-radius: 50px; margin-left: 400px; margin-top: -70px;"></div>
+    <div class="balloon" style="background-color: purple; width: 70px; height: 70px; border-radius: 50px; margin-left: 520px; margin-top: -70px;"></div>
+    <div class="balloon_darkcyan" style="background-color: darkcyan; width: 70px; height: 70px; border-radius: 50px; margin-left: 640px; margin-top: -70px;"></div>
+    <div class="balloon_darkcyan" style="background-color: darkcyan; width: 70px; height: 70px; border-radius: 50px; margin-left: 760px; margin-top: -70px;"></div>
+    <div class="balloon" style="background-color: orchid; width: 70px; height: 70px; border-radius: 50px; margin-left: 880px; margin-top: -70px;"></div>
+    <div class="balloon" style="background-color: black; width: 70px; height: 70px; border-radius: 50px; margin-left: 1000px; margin-top: -70px;"></div>
+    <div class="balloon" style="background-color: firebrick; width: 70px; height: 70px; border-radius: 50px; margin-left: 1120px; margin-top: -70px;"></div>
+    
+    <div class="balloon"  style="background-color: cornflowerblue; width: 70px; height: 70px; border-radius: 50px; margin-left: 1240px; margin-top: -70px;"></div>
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+
+</body>
+</html>

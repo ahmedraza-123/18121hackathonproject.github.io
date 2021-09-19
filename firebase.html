@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase authentication</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.2.2/firebase-app.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.2.2/firebase-auth.min.js"></script>
+
+
+
+    
+<script src="https://firebase.google.com/docs/web/setup#available-libraries"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.2.2/firebase-app.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.2.2/firebase-auth.min.js"></script>
+
+
+
+    
+</head>
+<body>
+ 
+
+
+
+
+
+
+
+    <div id="loginScreen">
+<button id="login" class="login" style="color: white; background-color: red; width: 200px; height: 50px; margin-left: 550px; margin-top: 300px;">Login</button>
+</div>
+
+<div id="dashboard">
+    <div id="userDetails"></div>
+    <button id="logOut">LogOut</button>
+</div>
+
+
+
+
+
+
+
+   
+<script>
+
+    // Import the functions you need from the SDKs you need
+
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDrHbtebWpvsTzkr0xv5if5yN03waLOAwk",
+  authDomain: "hackathon-authentication-ec0f2.firebaseapp.com",
+  projectId: "hackathon-authentication-ec0f2",
+  storageBucket: "hackathon-authentication-ec0f2.appspot.com",
+  messagingSenderId: "1058922191110",
+  appId: "1:1058922191110:web:3fc1bd7b043caef7c1a687",
+  measurementId: "G-4ERVZ1RS43"
+};
+firebase.initializeApp(firebaseConfig);
+// Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
+document.getElementById('dashboard').style.display='none';
+document.getElementById('login').addEventListener('click',GoogleLogin);
+document.getElementById('logOut').addEventListener('click',LogoutUser);
+
+var provider = new firebase.auth.GoogleAuthProvider();
+
+
+function GoogleLogin(){
+    console.log('login btn call')
+    firebase.auth().signInWithPopup(provider).then(res=>{
+        showUserDetails(res.user);
+        document.getElementById('loginScreen').style.display='none';
+        document.getElementById('dashboard').style.display='block';
+        console.log(res)
+      
+    }).catch(e=>{
+         console.log(e)
+    })
+ 
+}
+     function showUserDetails(user){
+       document.getElementById('userDetails').innerHTML=`<img src"${user.photoURL} style=width:10%> <p>Name: ${user.displayName}</p> <p>Email: ${user.email}</p>`;
+       
+       
+
+}
+
+function LogoutUser(){
+    console.log('logout btn call')
+    firebase.auth().signOut().then(()=>{
+        document.getElementById('loginScreen').style.display='block';
+        document.getElementById('dashboard').style.display='none';
+
+    }).catch((e)=>{
+        console.log(e)
+    })
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
